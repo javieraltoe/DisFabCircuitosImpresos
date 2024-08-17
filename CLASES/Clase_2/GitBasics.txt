@@ -1,0 +1,51 @@
+***************************************************
+* Como versionar el proyecto de Altium con Gitlab *
+***************************************************
+
+0- Instalar en altium la extensión
+
+1- Abrimos Git Bash y nos dirigimos al firectorio en el que se encuentra nuestro proyecto. En este caso tipear la siguiente ruta:
+$ cd g:/"Mi unidad"/RepOBC2/Hardware/Altium/Files/OBC2/Tick3
+
+2- Creamos la carpeta .git dentro de la carpeta del proyecto con el siguiente comando:
+$ git init
+
+3- Vinculamos la carpeta con el proyecto a un repositorio remoto. En este caso GitLab:
+$ git remote add origin git@gitlab.com:lgagliardi/obcversioned.git
+
+4- Copiamos el proyecto (salvo las carpetas, ya que ocupan mucho) con el siguiente comando:
+$ git add *.*
+
+5- Hacemos el primer commit:
+$ git commit -m "First Commit"
+
+6- Finalmente subimos los cambios al repositorio en la nube:
+$ git push -u origin master
+
+
+Más info: https://www.altium.com/documentation/altium-designer/using-version-control-ad?version=18.1#!UsingVersionControl-AddtoGitVersionControl
+
+
+
+****************************
+* Push en una nueva Brange *
+****************************
+
+1- En primer lugar, lo que se debe hacer es crear una Brange desde el menú de nuestro proyecto en GitLab. Por ejemplo de nombre Tick1.0.
+
+2- Desde GitBash me dirijo a la carpeta contenedora del proyecto (master).
+$ cd "Mi Unidad"/RepOBC2/Hardware/Altium/Files/OBC2/Tick3
+
+3- Creo una rama a nivel local llamada Tick 1.0.
+$ git checkout -b Tick1.0
+
+4- Copiamos el proyecto (salvo las carpetas, ya que ocupan mucho) dentro de la rama con el siguiente comando:
+$ git add *.*
+
+5- Hacemos un commit con un mensaje opcional mediante el siguiente comando.
+$ git commit -m "issue #1 done; issue #2 done; issue #3 done"
+
+6- Por ultimo hacemos push a la rama en el repositorio de Gitlab.
+$ git push origin Tick1.0
+
+
